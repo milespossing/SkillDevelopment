@@ -18,6 +18,12 @@ I'm placing this repo as a public repo on github to help give you an idea of who
 - Javascript, Node.js, React, etc. (more web perhaps)
 - Azure
 
+## Currently Working On:
+
+*Entity Framework*: Looking to have a really solid understanding of how entity framework works and how to set it up efficiently for a variety of tasks. It would be nice to get it rolling in Rider as well.
+
+*Docker*: Learning a lot about docker. I have SQL server environments running in docker which can be accessed through data grip (which is nice) so now I think I just have to do more with entity framework to get docker really rolling in the way I need it right now.
+
 ## Potential Project Ideas
 
 - Sudoku solver - given a sudoku puzzle it solves it automatically. Good practice for input and output. Could use text files or web ui to enter data. Also some good algorithm development perhaps
