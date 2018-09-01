@@ -18,6 +18,7 @@ namespace TaskManager.ViewModels
             Task t = new Task();
             t.Name = TaskName;
             t.DueDate = DueDate;
+            t.Description = "test";
             context.Tasks.Add(t);
             context.SaveChanges();
             MessageBox.Show("Task Created");

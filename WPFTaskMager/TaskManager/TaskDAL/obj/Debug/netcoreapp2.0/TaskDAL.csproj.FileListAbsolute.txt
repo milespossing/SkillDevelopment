@@ -1,0 +1,11 @@
+C:\Users\miles\source\repos\SkillDevelopment\WPFTaskMager\TaskManager\TaskDAL\bin\Debug\netcoreapp2.0\TaskDAL.deps.json
+C:\Users\miles\source\repos\SkillDevelopment\WPFTaskMager\TaskManager\TaskDAL\bin\Debug\netcoreapp2.0\TaskDAL.runtimeconfig.json
+C:\Users\miles\source\repos\SkillDevelopment\WPFTaskMager\TaskManager\TaskDAL\bin\Debug\netcoreapp2.0\TaskDAL.runtimeconfig.dev.json
+C:\Users\miles\source\repos\SkillDevelopment\WPFTaskMager\TaskManager\TaskDAL\bin\Debug\netcoreapp2.0\TaskDAL.dll
+C:\Users\miles\source\repos\SkillDevelopment\WPFTaskMager\TaskManager\TaskDAL\bin\Debug\netcoreapp2.0\TaskDAL.pdb
+C:\Users\miles\source\repos\SkillDevelopment\WPFTaskMager\TaskManager\TaskDAL\obj\Debug\netcoreapp2.0\TaskDAL.csprojAssemblyReference.cache
+C:\Users\miles\source\repos\SkillDevelopment\WPFTaskMager\TaskManager\TaskDAL\obj\Debug\netcoreapp2.0\TaskDAL.csproj.CoreCompileInputs.cache
+C:\Users\miles\source\repos\SkillDevelopment\WPFTaskMager\TaskManager\TaskDAL\obj\Debug\netcoreapp2.0\TaskDAL.AssemblyInfoInputs.cache
+C:\Users\miles\source\repos\SkillDevelopment\WPFTaskMager\TaskManager\TaskDAL\obj\Debug\netcoreapp2.0\TaskDAL.AssemblyInfo.cs
+C:\Users\miles\source\repos\SkillDevelopment\WPFTaskMager\TaskManager\TaskDAL\obj\Debug\netcoreapp2.0\TaskDAL.dll
+C:\Users\miles\source\repos\SkillDevelopment\WPFTaskMager\TaskManager\TaskDAL\obj\Debug\netcoreapp2.0\TaskDAL.pdb
