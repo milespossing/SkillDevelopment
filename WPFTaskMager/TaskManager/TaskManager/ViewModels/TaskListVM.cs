@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using System.Linq;
 using System.Windows;
 using System.Windows.Input;
@@ -10,18 +11,25 @@ namespace TaskManager.ViewModels
     {
         public Task[] Tasks { get; set; }
         public Task SelectedTask { get; set; }
-        public ICommand TestCommand => new SimpleCommand(Test);
+        public ICommand EndingCellEdit => new SimpleCommand(Test);
+
+        private TaskContext context;
 
         public TaskListVM()
         {
-            TaskContext context = new TaskContext();
+            context = new TaskContext();
             Tasks = context.Tasks.ToArray();
             OnPropertyChanged(nameof(Tasks));
         }
 
         private void Test()
         {
-            MessageBox.Show("Test!");
+            context.SaveChanges();
+        }
+
+        private void Closing()
+        {
+            context.SaveChanges();
         }
     }
 }

@@ -10,6 +10,12 @@ namespace TaskDAL.DAL
         {
             
         }
+
+        public override int SaveChanges()
+        {
+            Debug.WriteLine("Saving Changes");
+            return base.SaveChanges();
+        }
         
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

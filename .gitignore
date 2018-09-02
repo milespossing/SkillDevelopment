@@ -1,2 +1,10 @@
-**/bin/
-**/.vs/
+**bin/
+**.vs/
+
+*.suo
+
+[Tt]askManager/
+[Bb]in/
+
+*.dll
+

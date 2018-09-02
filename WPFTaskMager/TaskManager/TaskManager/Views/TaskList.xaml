@@ -12,8 +12,8 @@
     </UserControl.DataContext>
     <DataGrid ItemsSource="{Binding Tasks}" SelectedItem="{Binding SelectedTask}" AutoGenerateColumns="False">
         <i:Interaction.Triggers>
-            <i:EventTrigger EventName="SelectionChanged">
-                <i:InvokeCommandAction Command="{Binding TestCommand}"></i:InvokeCommandAction>
+            <i:EventTrigger EventName="CellEditEnding">
+                <i:InvokeCommandAction Command="{Binding EndingCellEdit}"></i:InvokeCommandAction>
             </i:EventTrigger>
         </i:Interaction.Triggers>
         <DataGrid.Columns>
