@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-c:\Users\miles\source\repos\SkillDevelopment\WPFTaskMager\TaskManager\TaskManager\obj\Debug\
+C:\Users\miles\source\repos\SkillDevelopment\WPFTaskMager\TaskManager\TaskManager\obj\Debug\
 TaskManager
 none
 false
 DEBUG;TRACE
-c:\Users\miles\source\repos\SkillDevelopment\WPFTaskMager\TaskManager\TaskManager\App.xaml
-62008013693
+C:\Users\miles\source\repos\SkillDevelopment\WPFTaskMager\TaskManager\TaskManager\App.xaml
+6-292182378
 
-20-114557711
-1441289482477
+16-2048572656
+144141429169
 MainWindow.xaml;Views\TaskCreater.xaml;Views\TaskCreationDialog.xaml;Views\TaskDetail.xaml;Views\TaskDetailHolder.xaml;Views\TaskList.xaml;
 
-True
+False
 
