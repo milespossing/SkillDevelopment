@@ -27,6 +27,6 @@
         </Grid.RowDefinitions>
         
         <Button Grid.Column="2" Grid.Row="2" Content="New Task" Command="{Binding TaskViewButtonClick}"/>
-        <views:TaskList Grid.Column="1" Grid.Row="1"/>
+        <views:TaskList Grid.Column="1" Grid.Row="1" DataContext="{Binding taskListVm}"/>
     </Grid>
 </Window>

@@ -32,8 +32,6 @@ C:\Users\miles\source\repos\SkillDevelopment\WPFTaskMager\TaskManager\TaskManage
 C:\Users\miles\source\repos\SkillDevelopment\WPFTaskMager\TaskManager\TaskManager\bin\Debug\System.Xml.XPath.XDocument.dll
 C:\Users\miles\source\repos\SkillDevelopment\WPFTaskMager\TaskManager\TaskManager\bin\Debug\Microsoft.EntityFrameworkCore.Abstractions.dll
 C:\Users\miles\source\repos\SkillDevelopment\WPFTaskMager\TaskManager\TaskManager\bin\Debug\Microsoft.EntityFrameworkCore.dll
-C:\Users\miles\source\repos\SkillDevelopment\WPFTaskMager\TaskManager\TaskManager\bin\Debug\Microsoft.EntityFrameworkCore.Relational.dll
-C:\Users\miles\source\repos\SkillDevelopment\WPFTaskMager\TaskManager\TaskManager\bin\Debug\Microsoft.EntityFrameworkCore.SqlServer.dll
 C:\Users\miles\source\repos\SkillDevelopment\WPFTaskMager\TaskManager\TaskManager\bin\Debug\Microsoft.Extensions.Caching.Abstractions.dll
 C:\Users\miles\source\repos\SkillDevelopment\WPFTaskMager\TaskManager\TaskManager\bin\Debug\Microsoft.Extensions.Caching.Memory.dll
 C:\Users\miles\source\repos\SkillDevelopment\WPFTaskMager\TaskManager\TaskManager\bin\Debug\Microsoft.Extensions.Configuration.Abstractions.dll
@@ -190,3 +188,6 @@ C:\Users\miles\source\repos\SkillDevelopment\WPFTaskMager\TaskManager\TaskManage
 C:\Users\miles\source\repos\SkillDevelopment\WPFTaskMager\TaskManager\TaskManager\bin\Debug\ru\System.Windows.Interactivity.resources.dll
 C:\Users\miles\source\repos\SkillDevelopment\WPFTaskMager\TaskManager\TaskManager\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
 C:\Users\miles\source\repos\SkillDevelopment\WPFTaskMager\TaskManager\TaskManager\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+C:\Users\miles\source\repos\SkillDevelopment\WPFTaskMager\TaskManager\TaskManager\bin\Debug\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\miles\source\repos\SkillDevelopment\WPFTaskMager\TaskManager\TaskManager\bin\Debug\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\miles\source\repos\SkillDevelopment\WPFTaskMager\TaskManager\TaskManager\bin\Debug\TaskDAL.dll.config

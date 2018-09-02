@@ -13,18 +13,23 @@ namespace TaskManager.ViewModels
         public Task SelectedTask { get; set; }
         public ICommand EndingCellEdit => new SimpleCommand(Save);
 
-        private TaskContext context;
+        private TaskContext _context;
 
         public TaskListVM()
         {
-            context = new TaskContext();
-            Tasks = context.Tasks.ToArray();
+            _context = new TaskContext();
+            Tasks = _context.Tasks.ToArray();
             OnPropertyChanged(nameof(Tasks));
+        }
+
+        public void Update()
+        {
+            Tasks = _context.Tasks.ToArray();
         }
 
         private void Save()
         {
-            context.SaveChanges();
+            _context.SaveChanges();
         }
     }
 }

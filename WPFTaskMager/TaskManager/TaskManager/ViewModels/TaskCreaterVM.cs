@@ -12,6 +12,8 @@ namespace TaskManager.ViewModels
         public DateTime DueDate { get; set; } = DateTime.Today;
         public ICommand OnSubmit => new SimpleCommand(SubmitTask);
 
+        public event EventHandler Submitted;
+
         private void SubmitTask()
         {
             TaskContext context = new TaskContext();
@@ -21,7 +23,7 @@ namespace TaskManager.ViewModels
             t.Description = "test";
             context.Tasks.Add(t);
             context.SaveChanges();
-            MessageBox.Show("Task Created");
+            Submitted?.Invoke(this, new EventArgs());
         }
     }
 }
