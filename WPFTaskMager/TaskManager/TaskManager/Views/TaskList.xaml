@@ -4,9 +4,16 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:TaskManager.Views"
-             mc:Ignorable="d"
-             d:DesignHeight="300" d:DesignWidth="300">
-    <DataGrid>
-        
+             xmlns:vm="clr-namespace:TaskManager.ViewModels"
+             mc:Ignorable="d">
+    <UserControl.DataContext>
+        <vm:TaskListVM></vm:TaskListVM>
+    </UserControl.DataContext>
+    <DataGrid ItemsSource="{Binding Tasks}" SelectedItem="{Binding SelectedTask}" AutoGenerateColumns="False" SelectionChanged="">
+        <DataGrid.Columns>
+            <DataGridCheckBoxColumn Binding="{Binding Completed}"/>
+            <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+            <DataGridTextColumn Header="Due Date" Binding="{Binding DueDate}"/>
+        </DataGrid.Columns>
     </DataGrid>
 </UserControl>
