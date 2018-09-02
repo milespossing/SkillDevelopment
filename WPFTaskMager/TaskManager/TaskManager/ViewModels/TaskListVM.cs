@@ -11,7 +11,7 @@ namespace TaskManager.ViewModels
     {
         public Task[] Tasks { get; set; }
         public Task SelectedTask { get; set; }
-        public ICommand EndingCellEdit => new SimpleCommand(Test);
+        public ICommand EndingCellEdit => new SimpleCommand(Save);
 
         private TaskContext context;
 
@@ -22,12 +22,7 @@ namespace TaskManager.ViewModels
             OnPropertyChanged(nameof(Tasks));
         }
 
-        private void Test()
-        {
-            context.SaveChanges();
-        }
-
-        private void Closing()
+        private void Save()
         {
             context.SaveChanges();
         }
