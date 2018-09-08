@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using SmallGroupsSite.Models;
+using SmallGroupsSite.Views.Groups;
 
 namespace SmallGroupsSite.Controllers
 {
@@ -40,7 +41,7 @@ namespace SmallGroupsSite.Controllers
                 return NotFound();
             }
 
-            return View(@group);
+            return View(new GroupDetailViewModel(@group));
         }
 
         // GET: Groups/Create

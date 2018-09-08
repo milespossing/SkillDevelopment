@@ -10,7 +10,9 @@ namespace SmallGroupsSite.Models
     public class Person
     {
         public int ID { get; set; }
+        [DisplayName("Last Name")]
         public string LastName { get; set; }
+        [DisplayName("First Name")]
         public string FirstName { get; set; }
 
         [DisplayName("Address")]
