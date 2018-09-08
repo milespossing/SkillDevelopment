@@ -11,5 +11,6 @@ namespace SmallGroupsSite.Models
         public string Name { get; set; }
         
         public virtual GroupAddress Address { get; set; }
+        public virtual ICollection<GroupMembership> GroupMemberships { get; set; }
     }
 }

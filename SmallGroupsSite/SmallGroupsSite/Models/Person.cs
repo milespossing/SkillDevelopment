@@ -15,5 +15,9 @@ namespace SmallGroupsSite.Models
 
         [DisplayName("Address")]
         public PersonAddress PersonAddress { get; set; }
+        public virtual ICollection<GroupMembership> GroupMemberships { get; set; }
+
+        // Views
+        public string FullName => $"{FirstName} {LastName}";
     }
 }

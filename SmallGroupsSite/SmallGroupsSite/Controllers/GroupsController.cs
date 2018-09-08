@@ -32,8 +32,9 @@ namespace SmallGroupsSite.Controllers
                 return NotFound();
             }
 
-            var @group = await _context.Group
+            var @group = await _context.Group.Include("GroupMemberships.Person")
                 .FirstOrDefaultAsync(m => m.ID == id);
+            
             if (@group == null)
             {
                 return NotFound();

@@ -19,10 +19,20 @@ namespace SmallGroupsSite.Models
             optionsBuilder.UseSqlServer("Server=.;Database=SmallGroups;User Id=SA;Password=<YourStrong!Passw0rd>");
         }
 
-        //protected override void OnModelCreating(ModelBuilder modelBuilder)
-        //{
-        
-        //}
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<GroupMembership>().HasKey(x => new {x.PersonID, x.GroupID});
+
+            modelBuilder.Entity<GroupMembership>()
+                .HasOne(m => m.Person)
+                .WithMany(p => p.GroupMemberships)
+                .HasForeignKey(m => m.PersonID);
+
+            modelBuilder.Entity<GroupMembership>()
+                .HasOne(m => m.Group)
+                .WithMany(g => g.GroupMemberships)
+                .HasForeignKey(m => m.GroupID);
+        }
 
         public DbSet<Person> Person { get; set; }
         public DbSet<Group> Group { get; set; }

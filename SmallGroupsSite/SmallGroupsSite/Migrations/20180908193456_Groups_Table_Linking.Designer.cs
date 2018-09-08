@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SmallGroupsSite.Models;
 
 namespace SmallGroupsSite.Migrations
 {
     [DbContext(typeof(SmallGroupsSiteContext))]
-    partial class SmallGroupsSiteContextModelSnapshot : ModelSnapshot
+    [Migration("20180908193456_Groups_Table_Linking")]
+    partial class Groups_Table_Linking
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
