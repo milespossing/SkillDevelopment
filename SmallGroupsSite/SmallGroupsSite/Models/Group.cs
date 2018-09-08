@@ -5,11 +5,11 @@ using System.Threading.Tasks;
 
 namespace SmallGroupsSite.Models
 {
-    public class PersonAddress : Address
+    public class Group
     {
         public int ID { get; set; }
-
-        public int PersonID { get; set; }
-        public virtual Person Person { get; set; }
+        public string Name { get; set; }
+        
+        public virtual GroupAddress Address { get; set; }
     }
 }

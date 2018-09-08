@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -10,22 +9,22 @@ using SmallGroupsSite.Models;
 
 namespace SmallGroupsSite.Controllers
 {
-    public class PeopleController : Controller
+    public class GroupsController : Controller
     {
         private readonly SmallGroupsSiteContext _context;
 
-        public PeopleController(SmallGroupsSiteContext context)
+        public GroupsController(SmallGroupsSiteContext context)
         {
             _context = context;
         }
 
-        // GET: People
+        // GET: Groups
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Person.ToListAsync());
+            return View(await _context.Group.ToListAsync());
         }
 
-        // GET: People/Details/5
+        // GET: Groups/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -33,39 +32,39 @@ namespace SmallGroupsSite.Controllers
                 return NotFound();
             }
 
-            var person = await _context.Person.Include(p => p.PersonAddress)
+            var @group = await _context.Group
                 .FirstOrDefaultAsync(m => m.ID == id);
-            if (person == null)
+            if (@group == null)
             {
                 return NotFound();
             }
 
-            return View(person);
+            return View(@group);
         }
 
-        // GET: People/Create
+        // GET: Groups/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: People/Create
+        // POST: Groups/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,LastName,FirstName")] Person person)
+        public async Task<IActionResult> Create([Bind("ID,Name")] Group @group)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(person);
+                _context.Add(@group);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(person);
+            return View(@group);
         }
 
-        // GET: People/Edit/5
+        // GET: Groups/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -73,22 +72,22 @@ namespace SmallGroupsSite.Controllers
                 return NotFound();
             }
 
-            var person = await _context.Person.FindAsync(id);
-            if (person == null)
+            var @group = await _context.Group.FindAsync(id);
+            if (@group == null)
             {
                 return NotFound();
             }
-            return View(person);
+            return View(@group);
         }
 
-        // POST: People/Edit/5
+        // POST: Groups/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,LastName,FirstName")] Person person)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,Name")] Group @group)
         {
-            if (id != person.ID)
+            if (id != @group.ID)
             {
                 return NotFound();
             }
@@ -97,12 +96,12 @@ namespace SmallGroupsSite.Controllers
             {
                 try
                 {
-                    _context.Update(person);
+                    _context.Update(@group);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!PersonExists(person.ID))
+                    if (!GroupExists(@group.ID))
                     {
                         return NotFound();
                     }
@@ -113,10 +112,10 @@ namespace SmallGroupsSite.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(person);
+            return View(@group);
         }
 
-        // GET: People/Delete/5
+        // GET: Groups/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -124,30 +123,30 @@ namespace SmallGroupsSite.Controllers
                 return NotFound();
             }
 
-            var person = await _context.Person
+            var @group = await _context.Group
                 .FirstOrDefaultAsync(m => m.ID == id);
-            if (person == null)
+            if (@group == null)
             {
                 return NotFound();
             }
 
-            return View(person);
+            return View(@group);
         }
 
-        // POST: People/Delete/5
+        // POST: Groups/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var person = await _context.Person.FindAsync(id);
-            _context.Person.Remove(person);
+            var @group = await _context.Group.FindAsync(id);
+            _context.Group.Remove(@group);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool PersonExists(int id)
+        private bool GroupExists(int id)
         {
-            return _context.Person.Any(e => e.ID == id);
+            return _context.Group.Any(e => e.ID == id);
         }
     }
 }

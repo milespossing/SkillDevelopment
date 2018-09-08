@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using SmallGroupsSite.Models;
 
 namespace SmallGroupsSite.Models
 {
@@ -24,6 +25,6 @@ namespace SmallGroupsSite.Models
         //}
 
         public DbSet<Person> Person { get; set; }
-        public DbSet<PersonAddress> PersonAddress { get; set; }
+        public DbSet<Group> Group { get; set; }
     }
 }

@@ -2,60 +2,23 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SmallGroupsSite.Models;
 
 namespace SmallGroupsSite.Migrations
 {
     [DbContext(typeof(SmallGroupsSiteContext))]
-    partial class SmallGroupsSiteContextModelSnapshot : ModelSnapshot
+    [Migration("20180908191452_Groups_Table")]
+    partial class Groups_Table
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "2.1.1-rtm-30846")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-            modelBuilder.Entity("SmallGroupsSite.Models.Group", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Name");
-
-                    b.HasKey("ID");
-
-                    b.ToTable("Group");
-                });
-
-            modelBuilder.Entity("SmallGroupsSite.Models.GroupAddress", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("City");
-
-                    b.Property<int>("GroupID");
-
-                    b.Property<string>("Line1");
-
-                    b.Property<string>("Line2");
-
-                    b.Property<string>("State");
-
-                    b.Property<int>("ZipCode");
-
-                    b.HasKey("ID");
-
-                    b.HasIndex("GroupID")
-                        .IsUnique();
-
-                    b.ToTable("GroupAddress");
-                });
 
             modelBuilder.Entity("SmallGroupsSite.Models.Person", b =>
                 {
@@ -96,14 +59,6 @@ namespace SmallGroupsSite.Migrations
                         .IsUnique();
 
                     b.ToTable("PersonAddress");
-                });
-
-            modelBuilder.Entity("SmallGroupsSite.Models.GroupAddress", b =>
-                {
-                    b.HasOne("SmallGroupsSite.Models.Group", "Group")
-                        .WithOne("Address")
-                        .HasForeignKey("SmallGroupsSite.Models.GroupAddress", "GroupID")
-                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("SmallGroupsSite.Models.PersonAddress", b =>

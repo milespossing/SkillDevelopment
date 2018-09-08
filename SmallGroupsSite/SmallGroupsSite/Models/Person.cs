@@ -14,6 +14,6 @@ namespace SmallGroupsSite.Models
         public string FirstName { get; set; }
 
         [DisplayName("Address")]
-        public PersonAddress Address { get; set; }
+        public PersonAddress PersonAddress { get; set; }
     }
 }
