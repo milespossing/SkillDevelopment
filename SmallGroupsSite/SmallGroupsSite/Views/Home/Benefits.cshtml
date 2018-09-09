@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewData["Title"] = "Benefits";
+    Layout = "plotLayout";
+}
+
+<link rel="stylesheet" href="css/PlottingStyles.css"/>
+
+<h2>Benefits of hiring Miles</h2>
+
+<div id="moneyTimePlot" class="plot"></div>
+
+<script>
+    moneyPlot = document.getElementById('moneyTimePlot');
+    xVals = new Array();
+    yVals = new Array();
+    for (i = 0; i < 1000; i++) {
+        xVals.push(i);
+    }
+    for (i = 0; i < 200; i++) {
+        rnd = 100 * Math.random() - 5;
+        yVals.push(i + rnd);
+    }
+    for (i = 200; i < 500; i++) {
+        rnd = 100 * Math.random() - 5;
+        yVals.push(2 * i + rnd - 300);
+    }
+    for (i = 500; i < 1000; i++) {
+        rnd = 100 * Math.random() - 5;
+        yVals.push(Math.pow(i/25,2) + rnd);
+    }
+    var trace = {
+        x: xVals,
+        y: yVals,
+        type: 'scatter'
+    };
+    var layout = {
+        title: "Profits over time",
+        xaxis: {
+            title: "Hiring Miles"
+        },
+        yaxis: {
+            title: "Making Money"
+        },
+        annotations: [
+            {
+                x: 198,
+                y: 282,
+                text: "Mostly hiring Miles"
+            }, {
+                x: 499,
+                y: 751,
+                text: "Kinda hiring Miles and then <em>really</em> hiring Miles"
+            }]
+    };
+    var axis = {
+    };
+    Plotly.plot(moneyPlot, [trace], layout);
+</script>
+
