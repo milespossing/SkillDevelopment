@@ -1,5 +1,6 @@
 .vs/
 [Bb]in/
-obj/
+[Oo]bj/
 
 *.xcf
+WPFTaskMager/TaskManager/TaskManager/obj/Debug/TaskManager_MarkupCompile.lref
