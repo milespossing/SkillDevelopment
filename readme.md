@@ -20,9 +20,11 @@ I'm placing this repo as a public repo on github to help give you an idea of who
 
 ## Currently Working On:
 
-*Entity Framework*: Looking to have a really solid understanding of how entity framework works and how to set it up efficiently for a variety of tasks. It would be nice to get it rolling in Rider as well.
+*Docker*: Learning a lot about docker. I have SQL server environments running in docker which can be accessed through data grip (which is nice) so now I think I just have to do more with entity framework to get docker really rolling in the way I need it right now. The next step will be learning how to stack up multiple docker instances into a self-contained application. One example of this would be an instance of docker running SQL Server and another instance running ASP.NET and the two talking to one another. That would be really fun. Alternitively I could just use Azure for that.
 
-*Docker*: Learning a lot about docker. I have SQL server environments running in docker which can be accessed through data grip (which is nice) so now I think I just have to do more with entity framework to get docker really rolling in the way I need it right now.
+*ASP.NET*: Building a very simple small groups app. It's really just a proof of concept, but it's an application for churches to keep track of a small groups system and their congregation from a data perspective.
+
+*General Web Dev*: Working on a personal site/blog/resume/portfolio catchall kinda thing to hone my general web deb skills.
 
 ## Potential Project Ideas
 
