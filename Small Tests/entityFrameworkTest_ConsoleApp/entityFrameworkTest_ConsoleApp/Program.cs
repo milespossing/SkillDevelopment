@@ -1,4 +1,8 @@
 ﻿using System;
+using System.Linq;
+using entityFrameworkTest_ConsoleApp.DAL;
+using entityFrameworkTest_ConsoleApp.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace entityFrameworkTest_ConsoleApp
 {
@@ -6,7 +10,10 @@ namespace entityFrameworkTest_ConsoleApp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            PeopleContextFactory factory = new PeopleContextFactory();
+            PeopleContext context = factory.CreateDbContext();
+            Person miles = context.People.First(p => p.FirstName == "Miles");
+            Console.WriteLine("Done");
             Console.ReadLine();
         }
     }

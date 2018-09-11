@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using entityFrameworkTest_ConsoleApp.DAL;
 
 namespace entityFrameworkTest_ConsoleApp.Migrations
 {
     [DbContext(typeof(PeopleContext))]
-    partial class PeopleContextModelSnapshot : ModelSnapshot
+    [Migration("20180911031909_CoursesTables2")]
+    partial class CoursesTables2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -29,11 +31,7 @@ namespace entityFrameworkTest_ConsoleApp.Migrations
 
                     b.Property<string>("Name");
 
-                    b.Property<int?>("ProfessorID");
-
                     b.HasKey("ID");
-
-                    b.HasIndex("ProfessorID");
 
                     b.ToTable("Courses");
                 });
@@ -50,11 +48,7 @@ namespace entityFrameworkTest_ConsoleApp.Migrations
 
                     b.Property<string>("LastName");
 
-                    b.Property<int?>("PersonAddressID");
-
                     b.HasKey("ID");
-
-                    b.HasIndex("PersonAddressID");
 
                     b.ToTable("People");
                 });
@@ -71,11 +65,16 @@ namespace entityFrameworkTest_ConsoleApp.Migrations
 
                     b.Property<string>("Line2");
 
+                    b.Property<int>("PersonID");
+
                     b.Property<string>("State");
 
                     b.Property<int>("ZipCode");
 
                     b.HasKey("ID");
+
+                    b.HasIndex("PersonID")
+                        .IsUnique();
 
                     b.ToTable("PersonAddress");
                 });
@@ -97,19 +96,12 @@ namespace entityFrameworkTest_ConsoleApp.Migrations
                     b.ToTable("Registration");
                 });
 
-            modelBuilder.Entity("entityFrameworkTest_ConsoleApp.Models.Course", b =>
+            modelBuilder.Entity("entityFrameworkTest_ConsoleApp.Models.PersonAddress", b =>
                 {
-                    b.HasOne("entityFrameworkTest_ConsoleApp.Models.Person", "Professor")
-                        .WithMany("CoursesTeaching")
-                        .HasForeignKey("ProfessorID")
-                        .OnDelete(DeleteBehavior.Restrict);
-                });
-
-            modelBuilder.Entity("entityFrameworkTest_ConsoleApp.Models.Person", b =>
-                {
-                    b.HasOne("entityFrameworkTest_ConsoleApp.Models.PersonAddress", "PersonAddress")
-                        .WithMany("People")
-                        .HasForeignKey("PersonAddressID");
+                    b.HasOne("entityFrameworkTest_ConsoleApp.Models.Person", "Person")
+                        .WithOne("PersonAddress")
+                        .HasForeignKey("entityFrameworkTest_ConsoleApp.Models.PersonAddress", "PersonID")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("entityFrameworkTest_ConsoleApp.Models.Registration", b =>
